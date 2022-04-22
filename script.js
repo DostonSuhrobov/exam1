@@ -35,7 +35,7 @@ const displayMusic = (musics) => {
     const htmlString = musics.results
     .map((music) => {
     return `
-    <div class="center">
+    <div class="container">
     <div class="property-card">
       <a href="#">
         <div class="property-image">
