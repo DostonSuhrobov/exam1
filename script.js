@@ -1,4 +1,4 @@
-const charactersList = document.getElementById('charactersList');
+const musicList = document.getElementById('music_list');
 const searchBar = document.getElementById('searchBar');
 
 let hpCharacters = [];
@@ -12,10 +12,10 @@ searchBar.addEventListener('keyup', (e) => {
             character.house.toLowerCase().includes(searchString)
         );
     });
-    displayCharacters(filteredCharacters);
+    displayMusic(filteredCharacters);
 });
 
-const loadCharacters = async () => {
+const loadMusic = async () => {
     try {
         const searchBar_value = document.getElementById('searchBar').value;
         const res = await fetch(`https://itunes.apple.com/search?term=${searchBar_value}&media=music&entity=album&attribute=artistTerm&limit=10`);
@@ -25,34 +25,31 @@ const loadCharacters = async () => {
         console.log(typeof(hpCharacters));
         console.log(hpCharacters);
 
-        displayCharacters(hpCharacters);
+        displayMusic(hpCharacters);
     } catch (err) {
         console.error(err);
     }
 };
 
-const displayCharacters = (characters) => {
-    const htmlString = characters.results
-        .map((character) => {
+const displayMusic = (musics) => {
+    const htmlString = musics.results
+        .map((music) => {
             return `
             <li class="character">
-                <h2>${character.artistName}</h2>
+                <h2>${music.artistName}</h2>
                 <br/>
-                <p>House: ${character.collectionPrice}</p>
+                <p>House: ${music.collectionPrice}</p>
                
             </li>
         `;
         })
         .join('');
-        console.log(typeof(characters));
-        console.log(characters);
-    charactersList.innerHTML = htmlString;
+
+        musicList.innerHTML = htmlString;
 };
 
-// [0].name
 
-
-loadCharacters();
+loadMusic();
 
 
 
