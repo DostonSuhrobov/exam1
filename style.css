@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    background-color: #fff9e7;
+    background-color: #ffffff;
 }
 
 * {
@@ -135,8 +135,8 @@ h1 {
   transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   border-radius:16px;
   overflow:hidden;
-  -webkit-box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
-  box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+  -webkit-box-shadow:  15px 15px 27px #7e7e7e, -15px -15px 27px #bdbdbd;
+  box-shadow:  15px 15px 27px #676767, -15px -15px 27px #bdbdbd;
 }
 
 /* Top Half of card, image. */
