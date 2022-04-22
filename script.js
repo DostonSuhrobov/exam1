@@ -33,18 +33,31 @@ const loadMusic = async () => {
 
 const displayMusic = (musics) => {
     const htmlString = musics.results
-        .map((music) => {
-            return `
-            <li class="character">
-            <img src="${music.artworkUrl60}">
-                <h2>${music.artistName}</h2>
-                <br/>
-                <p>Copyright: ${music.copyright}</p>
-
-            </li>
-        `;
-        })
-        .join('');
+    .map((music) => {
+    return `
+    <div class="center">
+    <div class="property-card">
+      <a href="#">
+        <div class="property-image">
+         <img src="${music.artworkUrl100}"> 
+          <div class="property-image-title">
+          
+          </div>
+        </div></a>
+      <div class="property-description">
+        <h5>${music.artistName} </h5>
+        <p>Copyright: ${music.copyright}</p>
+      </div>
+      <a href=${music.artistViewUrl}>
+        <div class="property-social-icons">
+          
+        </div>
+      </a>
+    </div>
+  </div>
+   
+    `}).join('');
+        
 
         musicList.innerHTML = htmlString;
 };
