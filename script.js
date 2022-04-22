@@ -36,10 +36,11 @@ const displayMusic = (musics) => {
         .map((music) => {
             return `
             <li class="character">
+            <img src="${music.artworkUrl60}">
                 <h2>${music.artistName}</h2>
                 <br/>
-                <p>House: ${music.collectionPrice}</p>
-               
+                <p>Copyright: ${music.copyright}</p>
+
             </li>
         `;
         })
