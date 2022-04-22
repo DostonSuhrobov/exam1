@@ -22,9 +22,6 @@ const loadMusic = async () => {
         
         hpCharacters = await res.json();
 
-        console.log(typeof(hpCharacters));
-        console.log(hpCharacters);
-
         displayMusic(hpCharacters);
     } catch (err) {
         console.error(err);
